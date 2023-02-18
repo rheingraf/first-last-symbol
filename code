@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Program(string& s)
+{
+	char &begin = s.front();
+	char &end = s.back();
+	begin = ' '; end = '.';
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	string str;
+	while (str.length() < 2) // Проверка символов>2
+	{
+		cout << "Enter string 2 symbols: ";
+		getline(cin, str);
+	}
+	cout << "\nБыло: " << str;
+	Program(str); // Вызов функции и передача str
+	cout << "\nСтало: " << str;
+}
